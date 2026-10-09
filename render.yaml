@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: burst-notifier
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: API_KEY
+        generateValue: true
+      - key: QUIET_WINDOW
+        value: 5s
+      - key: MAX_WAIT
+        value: 30s
